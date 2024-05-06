@@ -9,3 +9,9 @@ Setelah dilakukan perintah `cargo run --bin server` dan `cargo run --bin client`
 ![alt text](client8080.jpg)
 ![alt text](server8080.jpg)
 Pada kedua potongan output tersebut, telihat bahwa port telah diubah menjadi 8080 baik pada file `client.rs` maupun pada `server.rs`. Ketika kita melakukan modifikasi port pada kedua sisi, maka program akan berjalan dengan baik sebagaimana semestinya. Namun, jika kita hanya melakukan modifikasi pada satu sisi saja, maka program tidak dapat berjalan dan akan terjadi error sehingga untuk melakukan praktik modifying port, kita harus melakukan modifikasi pada kedua sisi baik server maupun client.
+
+### 2.3 Small changes, add some information to client
+![alt text](client_info.jpg) <br>
+Potongan output diatas saya dapat dengan melakukan penambahan informasi pada kode `println!("Hana's computer - From server: {}", text);` dalam file client.rs
+![alt text](server_info.jpg) <br>
+Sementara itu, Potongan output ini saya dapat dengan melakukan penambahan informasi pada kode `println!("New connection from Hana's computer {addr:?}");` dan modifikasi kode `bcast_tx.send(format!("{addr} : {text}"))?;` dalam file server.rs 
